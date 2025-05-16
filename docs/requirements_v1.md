@@ -1,12 +1,20 @@
 # Project Requirements and Specifications
 
 ## Project Overview
-The "jobbar-mia" project is a web application built using React, Vite, Tailwind CSS, and TypeScript. It is designed to provide users with a calendar interface that highlights working days, making it easier to visualize and manage work schedules.
+The "jobbar-mia" project is a web application built using React, Vite, Tailwind CSS, and TypeScript. It is designed to display Mia's three-week rotating work schedule in a calendar format, with working days highlighted with a heart symbol.
+
+## Work Schedule Pattern
+The work schedule follows a three-week rotating pattern:
+- **Week 1**: Friday, Saturday, Sunday
+- **Week 2**: Wednesday, Thursday
+- **Week 3**: Monday, Tuesday
+
+A reference point is provided: Friday, May 23rd, 2025 is a workday (beginning of Week 1).
 
 ## Key Features
-- **Calendar Component**: Displays a calendar view with highlighted working days.
+- **Calendar Component**: Displays a calendar view with working days highlighted with heart symbols in Swedish format.
 - **Header Component**: Provides navigation and branding for the application.
-- **Custom Hook**: `useCalendar` manages calendar state and logic, including fetching working days.
+- **Custom Hook**: `useWorkSchedule` calculates work days based on the rotating pattern.
 - **Responsive Design**: Utilizes Tailwind CSS for a mobile-friendly layout.
 - **PWA Support**: Implements service workers for offline capabilities and improved performance.
 
@@ -37,7 +45,14 @@ The project relies on several key libraries and tools:
 - Ensure components are reusable and maintainable.
 - Regularly update documentation to reflect changes in the project.
 
+## Deployment
+- The application will be deployed as a GitHub Pages site.
+- The deployment process should be automated through npm scripts.
+- The base URL will be https://abuursaminor.github.io/jobbar-mia
+
 ## Future Enhancements
-- Implement user authentication for personalized calendar views.
-- Add functionality for users to add, edit, and delete working days.
-- Integrate with external APIs for fetching public holidays and events.
+- Add toggleable views (month, week, day)
+- Integrate Swedish public holidays
+- Allow customization of the work pattern
+- Add notifications for upcoming work days
+- Implement dark/light mode toggle

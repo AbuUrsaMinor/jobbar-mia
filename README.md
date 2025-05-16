@@ -1,54 +1,77 @@
-# React + TypeScript + Vite
+# Jobbar Mia
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Progressive Web Application (PWA) that displays Mia's work schedule on a calendar, with heart symbols marking her working days.
 
-Currently, two official plugins are available:
+The application is built using:
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS
+- PWA technology for offline use
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Work Schedule Pattern
 
-## Expanding the ESLint configuration
+The application visualizes Mia's three-week rotating work schedule:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Week 1**: Friday, Saturday, Sunday
+- **Week 2**: Wednesday, Thursday
+- **Week 3**: Monday, Tuesday
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+A reference point is provided: Friday, May 23rd, 2025 is a workday (beginning of Week 1).
+
+## Getting Started
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/abuursaminor/jobbar-mia.git
+
+# Navigate to the project directory
+cd jobbar-mia
+
+# Install dependencies
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+# Start the development server
+npm run dev
+```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### Building for Production
+
+```bash
+# Build the application
+npm run build
+
+# Preview the production build
+npm run preview
+```
+
+### Deployment
+
+The application is configured to deploy to GitHub Pages automatically.
+
+```bash
+# Deploy to GitHub Pages
+npm run deploy
+```
+
+Alternatively, use the provided PowerShell script:
+
+```powershell
+# Windows PowerShell
+./scripts/deploy.ps1
+```
+
+## Features
+
+- Calendar display with Swedish date format
+- Heart symbols marking Mia's working days
+- Month navigation
+- Responsive design for mobile and desktop
+- Works offline as a PWA
 ```
