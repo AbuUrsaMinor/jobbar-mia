@@ -59,12 +59,12 @@ const Calendar = () => {
     });
 
     return (
-        <div className="w-full max-w-3xl mx-auto overflow-x-hidden" style={{ touchAction: 'pan-y' }}>
+        <div className="w-full p-2 sm:p-4 overflow-x-hidden" style={{ touchAction: 'pan-y' }}>
             <div className="flex justify-between items-center mb-4">
                 <button
                     onClick={handlePreviousMonth}
                     aria-label="Föregående månad"
-                    className="bg-transparent hover:bg-gray-100 text-gray-800 py-2 px-2 rounded-md transition-colors min-w-[44px] border border-gray-200 flex items-center justify-center"
+                    className="bg-white hover:bg-gray-100 text-gray-800 py-2 px-2 rounded-md transition-colors min-w-[44px] border border-gray-200 flex items-center justify-center"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
                 </button>
@@ -80,7 +80,7 @@ const Calendar = () => {
                 <button
                     onClick={handleNextMonth}
                     aria-label="Nästa månad"
-                    className="bg-transparent hover:bg-gray-100 text-gray-800 py-2 px-2 rounded-md transition-colors min-w-[44px] border border-gray-200 flex items-center justify-center"
+                    className="bg-white hover:bg-gray-100 text-gray-800 py-2 px-2 rounded-md transition-colors min-w-[44px] border border-gray-200 flex items-center justify-center"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                 </button>
