@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
-      <main className="container mx-auto py-8 px-4">
+      <main className="container mx-auto">
         <Calendar />
         <footer className="mt-12 text-center text-sm text-gray-500">
           <p>&copy; {new Date().getFullYear()} Jobbar Mia - För att hålla koll på Mias arbetsschema</p>
