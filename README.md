@@ -1,54 +1,54 @@
-# Jobbar Mia
+# React + TypeScript + Vite
 
-Jobbar Mia is a web application built with React, Vite, Tailwind CSS, and TypeScript. The application provides a calendar interface that highlights working days, making it easier for users to visualize their work schedule.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Features
+Currently, two official plugins are available:
 
-- **Calendar View**: Displays a calendar with highlighted working days.
-- **Responsive Design**: Built with Tailwind CSS for a modern and responsive user interface.
-- **Progressive Web App (PWA)**: Supports offline capabilities and can be installed on devices.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Technologies Used
+## Expanding the ESLint configuration
 
-- **React**: A JavaScript library for building user interfaces.
-- **Vite**: A fast build tool and development server for modern web projects.
-- **Tailwind CSS**: A utility-first CSS framework for styling.
-- **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-## Installation
+```js
+export default tseslint.config({
+  extends: [
+    // Remove ...tseslint.configs.recommended and replace with this
+    ...tseslint.configs.recommendedTypeChecked,
+    // Alternatively, use this for stricter rules
+    ...tseslint.configs.strictTypeChecked,
+    // Optionally, add this for stylistic rules
+    ...tseslint.configs.stylisticTypeChecked,
+  ],
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
 
-To get started with the project, follow these steps:
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   ```
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-2. Navigate to the project directory:
-   ```
-   cd jobbar-mia
-   ```
-
-3. Install the dependencies:
-   ```
-   npm install
-   ```
-
-4. Start the development server:
-   ```
-   npm run dev
-   ```
-
-5. Open your browser and go to `http://localhost:3000` to view the application.
-
-## Usage
-
-Once the application is running, you can interact with the calendar to view and manage working days. The calendar highlights the working days based on the logic defined in the application.
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request for any enhancements or bug fixes.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for more details.
+export default tseslint.config({
+  plugins: {
+    // Add the react-x and react-dom plugins
+    'react-x': reactX,
+    'react-dom': reactDom,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended typescript rules
+    ...reactX.configs['recommended-typescript'].rules,
+    ...reactDom.configs.recommended.rules,
+  },
+})
+```
