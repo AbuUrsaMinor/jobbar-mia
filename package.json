@@ -2,7 +2,7 @@
   "name": "jobbar-mia",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://YOUR_GITHUB_USERNAME.github.io/jobbar-mia",
+  "homepage": "https://abuursaminor.github.io/jobbar-mia",
   "type": "module",
   "scripts": {
     "dev": "vite",
