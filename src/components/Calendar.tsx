@@ -11,7 +11,7 @@ const Calendar = () => {
     const year = currentDate.getFullYear();
 
     const { days } = useCalendar(month, year);
-    
+
     // Get weekday names in Swedish
     const getWeekdayNames = (): string[] => {
         const weekStart = startOfWeek(new Date(), { locale: sv });
@@ -20,20 +20,20 @@ const Calendar = () => {
             return format(day, 'EEEEEE', { locale: sv }); // Short weekday name
         });
     };
-    
+
     // Format date in Swedish
     const formatDate = (date: Date, formatStr: string): string => {
         return format(date, formatStr, { locale: sv });
     };
-    
+
     const weekdays = getWeekdayNames();
 
     const handlePreviousMonth = () => {
         setCurrentDate(prevDate => subMonths(prevDate, 1));
-    };    const handleNextMonth = () => {
+    }; const handleNextMonth = () => {
         setCurrentDate(prevDate => addMonths(prevDate, 1));
     };
-    
+
     // Add swipe handlers for mobile navigation
     const swipeHandlers = useSwipeable({
         onSwipedLeft: () => handleNextMonth(),
@@ -45,11 +45,11 @@ const Calendar = () => {
     return (
         <div className="w-full max-w-3xl mx-auto p-4">
             <div className="flex justify-between items-center mb-4">                <button
-                    onClick={handlePreviousMonth}
-                    className="bg-transparent hover:bg-gray-100 text-gray-800 py-2 px-6 rounded-md transition-colors min-w-[120px] border border-gray-200"
-                >
-                    &laquo; Föregående
-                </button>                <h2 className="text-2xl font-bold text-gray-800 flex items-center">
+                onClick={handlePreviousMonth}
+                className="bg-transparent hover:bg-gray-100 text-gray-800 py-2 px-6 rounded-md transition-colors min-w-[120px] border border-gray-200"
+            >
+                &laquo; Föregående
+            </button>                <h2 className="text-2xl font-bold text-gray-800 flex items-center">
                     {formatDate(currentDate, 'MMMM yyyy')}
                     <span className="ml-2 text-xs text-gray-400 hidden sm:inline">(svep för att byta månad)</span>
                 </h2>
