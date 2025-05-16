@@ -73,3 +73,31 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+@keyframes slide-left {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-left {
+  animation: slide-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-slide-right {
+  animation: slide-right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
