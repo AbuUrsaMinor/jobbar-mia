@@ -17,6 +17,7 @@ export default defineConfig({
         description: 'Visualisera Mias arbetsschema',
         theme_color: '#ffffff',
         icons: [
+          // SVG icons for browsers that support them
           {
             src: 'icons/pwa-192x192.svg',
             sizes: '192x192',
@@ -27,11 +28,23 @@ export default defineConfig({
             sizes: '512x512',
             type: 'image/svg+xml'
           },
+          // PNG icons for better compatibility (especially Android)
           {
-            src: 'icons/pwa-512x512.svg',
+            src: 'icons/pwa-192x192.png',
+            sizes: '192x192',
+            type: 'image/png'
+          },
+          {
+            src: 'icons/pwa-512x512.png',
             sizes: '512x512',
-            type: 'image/svg+xml',
-            purpose: 'any maskable'
+            type: 'image/png'
+          },
+          // Maskable icon specifically for Android
+          {
+            src: 'icons/pwa-maskable-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'maskable'
           }
         ]
       }
