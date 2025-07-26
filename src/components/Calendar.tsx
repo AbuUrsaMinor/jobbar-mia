@@ -59,12 +59,13 @@ const Calendar = () => {
     });
 
     return (
-        <div className="w-full p-2 sm:p-4 overflow-x-hidden" style={{ touchAction: 'pan-y' }}>
+        <div className="w-screen p-2 sm:p-4 overflow-x-hidden" style={{ touchAction: 'pan-y' }}>
             <div className="flex justify-between items-center mb-4">
                 <button
                     onClick={handlePreviousMonth}
                     aria-label="Föregående månad"
                     className="bg-white hover:bg-gray-100 text-gray-800 py-2 px-2 rounded-md transition-colors min-w-[44px] border border-gray-200 flex items-center justify-center"
+                    style={{ backgroundColor: '#fff' }}
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
                 </button>
@@ -81,6 +82,7 @@ const Calendar = () => {
                     onClick={handleNextMonth}
                     aria-label="Nästa månad"
                     className="bg-white hover:bg-gray-100 text-gray-800 py-2 px-2 rounded-md transition-colors min-w-[44px] border border-gray-200 flex items-center justify-center"
+                    style={{ backgroundColor: '#fff' }}
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                 </button>
@@ -105,7 +107,7 @@ const Calendar = () => {
                 {days.map(({ date, isCurrentMonth, isToday, isWorkDay }: CalendarDay, index: number) => (
                     <div
                         key={index}
-                        className={`p-1 h-10 sm:h-12 border-0 flex flex-col items-center justify-center ${isCurrentMonth ? 'bg-white' : 'bg-gray-50 text-gray-400'} ${isToday ? 'ring-1 ring-pink-500' : ''} ${isWorkDay ? 'bg-pink-50' : ''} rounded w-full`}
+                        className={`p-1 h-10 sm:h-12 border-0 flex flex-col items-center justify-center ${isCurrentMonth ? 'bg-white text-gray-700' : 'bg-gray-50 text-gray-400'} ${isToday ? 'ring-1 ring-pink-500' : ''} ${isWorkDay ? 'bg-pink-50' : ''} rounded w-full`}
                     >
                         <span className={`text-xs sm:text-sm ${isToday ? 'font-bold' : ''}`}>{date.getDate()}</span>
                         {isWorkDay && (
